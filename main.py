@@ -56,7 +56,8 @@ def download_csv(url, csv_suffix):
         file_size = os.path.getsize(filename)
         log(f"Zapisano {filename} ({file_size} bajtów): {len(df)} rekordów")
         
-        os.system(f"hdfs dfs -mkdir -p /unhcr/")
+        os.system("hdfs dfs -mkdir -p /unhcr/")
+        os.system(f"hdfs dfs -rm -f /unhcr/{filename}")
         os.system(f"hdfs dfs -put {filename} /unhcr/")
         os.system(f"hdfs dfs -setrep -w 3 /unhcr/{filename}")
         log(f"Wgrano na HDFS z 3 replikami plik: {filename}")
