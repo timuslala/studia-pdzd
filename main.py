@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import time
-from time import datetime
+from datetime import datetime
 import os 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
