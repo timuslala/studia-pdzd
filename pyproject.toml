@@ -1,3 +1,5 @@
+[tool.setuptools]
+packages = ["main"]
 [project]
 name = "przetwarzanie-duzych-zbiorow-danych"
 version = "0.1.0"
