@@ -1,5 +1,5 @@
 [tool.setuptools]
-packages = ["main"]
+py-modules = ["main", "data_explore"]
 [project]
 name = "przetwarzanie-duzych-zbiorow-danych"
 version = "0.1.0"
