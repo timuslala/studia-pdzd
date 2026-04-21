@@ -23,6 +23,7 @@ def log(message):
 
 def download_csv(url, csv_suffix):
     try:
+        filename = f"unhcr_{csv_suffix}.csv"
         page = 1
         all_data = []
 
@@ -44,14 +45,14 @@ def download_csv(url, csv_suffix):
 
             all_data.extend(items)
 
-            log(f"Strona {page}, rekordów: {len(items)}")
+            log(f"Plik {filename}, strona {page}, rekordów: {len(items)}")
 
             page += 1
 
         df = pd.DataFrame(all_data)
         df.to_csv(f"unhcr_{csv_suffix}.csv", index=False)
         
-        filename = f"unhcr_{csv_suffix}.csv"
+        
         file_size = os.path.getsize(filename)
         log(f"Zapisano {filename} ({file_size} bajtów): {len(df)} rekordów")
         
